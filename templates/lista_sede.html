@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main</title>
+	<!--<link rel="stylesheet" href="/estilosMain.css">-->
+<style>
+body{
+  font: 15px Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color: #ddd;
+}
+
+header{
+  background:#24282b;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:#FE2E2E 9px solid;
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+
+header #titulo{
+  float:left;
+}
+
+header #titulo h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin-top:10px;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+header .texto, header .actual a{
+  color:#FE2E2E;
+  font-weight:bold;
+}
+
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+section{
+	padding-top:55px;
+	min-height:70px;
+	margin-left: 13%;
+}
+
+section #sub{
+	float: left;
+	font-weight:bold;
+	font: 23px Arial;
+	margin: 0;
+	width: 100%;
+}
+
+section #tabla{
+	margin-top: 6%;
+}
+
+table{
+	width: 85%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #FE2E2E;
+	border-bottom: solid 5px #24282b;
+}
+
+.colorFila{
+	background-color: #FFFFFF;
+}
+
+tr:hover td{
+	background-color: #A4A4A4;
+	color: white;
+}
+
+#formulario{
+	width: 450px;
+	margin: auto;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 20px;
+}
+
+section #subContact{
+	margin: 0;
+	text-align: center;
+	font-weight:bold;
+	font: 30px Arial;
+	margin-bottom: 20px;
+}
+
+input, textarea{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 7px;
+	box-sizing: border-box;
+	font-size: 17px;
+}
+
+textarea{
+	min-height: 100px;
+	max-height: 200px;
+	max-width: 100%;
+	min-width: 100%;	
+}
+
+#button{
+	background: #FE2E2E;
+	color: #24282b;
+	border: 0;
+	padding: 20px;
+	opacity: 1;
+	border-radius: 3px;
+	margin-bottom: 0;
+	cursor: pointer;
+}
+
+#button:hover{
+	opacity: 2;
+}
+
+@media(max-width: 368px){
+	#formulario{
+		width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="titulo">
+				<h1>Veterinaria <span class="texto">pe</span></h1>
+			</div><!-- titulo -->
+			<nav>
+				<ul>
+					<li><a href="/paciente/">Inicio</a></li>
+					<li ><a href="/vet/">Veterinario</a></li>
+					<li class="actual"><a href="/sede/">Sede</a></li>
+					<li><a href="contactenos.html">Contactenos</a></li>
+				</ul>
+			</nav>
+		</div><!-- container -->
+	</header>
+	<section id="cabecera">
+		<div class="subtitulo">
+			<p id="sub">Veterinarios</p>
+		</div><!-- subtitulo -->
+		<div id="tabla">
+			<table>
+				<thead>
+					<tr>
+						<th>Veterinario a Cargo</th>
+						<th>Ubicación</th>
+					</tr>
+				</thead>
+			{% for abc in obj%}	
+				<tr class="colorFila">
+					<td>{{abc.veterinario}}</td>
+					<td>{{abc.ubicacion}}</td>
+				</tr>
+			{%endfor%}	
+			</table>
+		</div><!-- tabla -->
+	</section><!-- cabecera -->	
+</body>
+</html>
