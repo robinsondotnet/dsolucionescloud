@@ -20,8 +20,8 @@ from veterinaria.Apps.GestionVeteriana.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('paciente/',lista_paciente),
-    path('vet/',lista_veterinario),
-    path('sede/',lista_sede),
-    path('contacto/',contacto),
+    path('paciente/', lista_paciente),
+    path('vet/', lista_veterinario),
+    path('sede/', lista_sede),
+    path('contacto/', contacto),
 ]
